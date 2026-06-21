@@ -67,12 +67,14 @@
 
   .hero-sub { font-size:16px; color:var(--muted); max-width:360px; margin:0 auto 28px; line-height:1.5; }
 
-  .clique-badge { display:inline-block; background:linear-gradient(90deg,var(--gold),var(--gold-deep)); color:#3a1408; font-family:'Baloo 2',sans-serif; font-size:24px; letter-spacing:2px; padding:8px 26px; border-radius:50px; box-shadow:0 0 22px rgba(255,201,77,0.6); margin-bottom:14px; animation:pulseBadge 1.5s infinite alternate; }
+  .clique-badge { display:inline-block; background:linear-gradient(90deg,var(--gold),var(--gold-deep)); color:#3a1408; font-family:'Baloo 2',sans-serif; font-size:24px; letter-spacing:2px; padding:8px 26px; border-radius:50px; box-shadow:0 0 22px rgba(255,201,77,0.6); margin-bottom:26px; animation:pulseBadge 1.5s infinite alternate; }
   @keyframes pulseBadge { from{transform:scale(1)} to{transform:scale(1.05)} }
+
+  .cta-stack { display:flex; flex-direction:column; width:100%; }
 
   .btn-whatsapp {
     display:flex; align-items:center; justify-content:space-between; gap:14px;
-    width:100%; max-width:420px;
+    width:100%;
     background:linear-gradient(135deg,var(--green),#1fb855);
     border-radius:18px; padding:16px 20px; text-decoration:none; color:#fff;
     box-shadow:0 8px 28px rgba(37,211,102,0.35);
@@ -80,7 +82,7 @@
   }
   .btn-whatsapp:active { transform:scale(0.97); }
   .btn-inner { display:flex; align-items:center; gap:14px; min-width:0; }
-  .grupo-icon { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.7); flex-shrink:0; }
+  .grupo-icon { width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:center 15%; border:2px solid rgba(255,255,255,0.7); flex-shrink:0; }
   .btn-label { display:flex; flex-direction:column; gap:2px; min-width:0; }
   .btn-sub { font-size:11px; opacity:.85; text-transform:uppercase; letter-spacing:.5px; font-weight:700; }
   .btn-main { font-size:clamp(13px,4.2vw,17px); font-weight:800; line-height:1.2; white-space:normal; }
@@ -167,16 +169,18 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
 
   <div class="clique-badge">👇 CLIQUE AQUI 👇</div>
 
-  <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
-    <div class="btn-inner">
-      <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
-      <div class="btn-label">
-        <span class="btn-sub">Entrar no WhatsApp</span>
-        <span class="btn-main">Clica Aqui Amiga</span>
+  <div class="cta-stack">
+    <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
+      <div class="btn-inner">
+        <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
+        <div class="btn-label">
+          <span class="btn-sub">Entrar no WhatsApp</span>
+          <span class="btn-main">Clica Aqui Amiga</span>
+        </div>
       </div>
-    </div>
-    <div class="btn-arrow">›</div>
-  </a>
+      <div class="btn-arrow">›</div>
+    </a>
+  </div>
 
   <div class="small-note">🔒 100% grátis · Saia quando quiser</div>
 
@@ -248,16 +252,18 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
   <div class="cta-box">
     <span class="section-label">Bora economizar?</span>
     <div class="section-title">Entra na nossa turma 💖</div>
-    <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp" style="margin:0 auto;">
-      <div class="btn-inner">
-        <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
-        <div class="btn-label">
-          <span class="btn-sub">Entrar no WhatsApp</span>
-          <span class="btn-main">Clica Aqui Amiga</span>
+    <div class="cta-stack">
+      <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
+        <div class="btn-inner">
+          <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
+          <div class="btn-label">
+            <span class="btn-sub">Entrar no WhatsApp</span>
+            <span class="btn-main">Clica Aqui Amiga</span>
+          </div>
         </div>
-      </div>
-      <div class="btn-arrow">›</div>
-    </a>
+        <div class="btn-arrow">›</div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -330,3 +336,4 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
 </script>
 </body>
 </html>
+
