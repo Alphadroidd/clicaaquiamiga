@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clica Aqui Amiga</title>
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://clicaaquiamiga.pages.dev/">
+<meta property="og:title" content="GRUPO VIP CLICA AQUI AMIGA 💖">
+<meta property="og:description" content="Cupons, ofertas e achadinhos com até 70% OFF direto no seu WhatsApp! Moda, beleza, casa e muito mais. Entre grátis!">
+<meta property="og:image" content="https://clicaaquiamiga.pages.dev/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GRUPO VIP CLICA AQUI AMIGA 💖">
+<meta name="twitter:description" content="Cupons, ofertas e achadinhos com até 70% OFF direto no seu WhatsApp!">
+<meta name="twitter:image" content="https://clicaaquiamiga.pages.dev/og.jpg">
+<meta name="description" content="Cupons e achadinhos com até 70% OFF direto no seu WhatsApp! Entre grátis no grupo Clica Aqui Amiga.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink:      #ff5fa2;
+    --pink-mid:  #e0397f;
+    --pink-deep: #b8246a;
+    --gold:      #ffc94d;
+    --gold-deep: #ff9d3d;
+    --green:     #25d366;
+    --bg:        #1a0512;
+    --text:      #fff0f6;
+    --muted:     #d9a8c1;
+    --white:     #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { background:var(--bg); color:var(--text); font-family:'Nunito',sans-serif; overflow-x:hidden; }
+
+  body::before {
+    content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,95,162,0.28) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 85% 100%, rgba(255,201,77,0.14) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 30% at 5% 70%, rgba(184,36,106,0.20) 0%, transparent 60%);
+  }
+  body::after {
+    content:''; position:fixed; inset:0; z-index:9999; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    opacity:.6;
+  }
+
+  section { position:relative; z-index:1; padding:48px 20px; max-width:480px; margin:0 auto; }
+
+  /* HERO */
+  #hero { min-height:100svh; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding-top:32px; padding-bottom:40px; }
+
+  .logo-img-wrap { width:150px; height:150px; border-radius:50%; overflow:hidden; border:4px solid var(--gold); box-shadow:0 0 32px rgba(255,95,162,0.55); margin-bottom:20px; animation:floatLogo 3.5s ease-in-out infinite; }
+  @keyframes floatLogo { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .logo-img { width:100%; height:100%; object-fit:cover; display:block; }
+
+  .hero-badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,95,162,0.15); border:1px solid rgba(255,95,162,0.4); color:var(--pink); font-weight:800; font-size:12px; letter-spacing:1px; padding:6px 16px; border-radius:30px; margin-bottom:16px; text-transform:uppercase; }
+
+  .hero-title { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:38px; line-height:1.12; margin-bottom:14px; }
+  .hero-title .accent { background:linear-gradient(90deg,var(--pink),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+
+  .hero-sub { font-size:16px; color:var(--muted); max-width:360px; margin:0 auto 28px; line-height:1.5; }
+
+  .clique-badge { display:inline-block; background:linear-gradient(90deg,var(--gold),var(--gold-deep)); color:#3a1408; font-family:'Baloo 2',sans-serif; font-size:24px; letter-spacing:2px; padding:8px 26px; border-radius:50px; box-shadow:0 0 22px rgba(255,201,77,0.6); margin-bottom:14px; animation:pulseBadge 1.5s infinite alternate; }
+  @keyframes pulseBadge { from{transform:scale(1)} to{transform:scale(1.05)} }
+
+  .btn-whatsapp {
+    display:flex; align-items:center; justify-content:space-between; gap:14px;
+    width:100%; max-width:420px;
+    background:linear-gradient(135deg,var(--green),#1fb855);
+    border-radius:18px; padding:16px 20px; text-decoration:none; color:#fff;
+    box-shadow:0 8px 28px rgba(37,211,102,0.35);
+    transition:transform .15s ease;
+  }
+  .btn-whatsapp:active { transform:scale(0.97); }
+  .btn-inner { display:flex; align-items:center; gap:14px; min-width:0; }
+  .grupo-icon { width:48px; height:48px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.7); flex-shrink:0; }
+  .btn-label { display:flex; flex-direction:column; gap:2px; min-width:0; }
+  .btn-sub { font-size:11px; opacity:.85; text-transform:uppercase; letter-spacing:.5px; font-weight:700; }
+  .btn-main { font-size:clamp(13px,4.2vw,17px); font-weight:800; line-height:1.2; white-space:normal; }
+  .btn-arrow { font-size:24px; opacity:.9; flex-shrink:0; }
+
+  .small-note { font-size:12px; color:var(--muted); margin-top:14px; display:flex; align-items:center; gap:6px; }
+
+  #carousel-wrap { margin:8px auto 0; width:100%; max-width:420px; }
+  #carousel { position:relative; overflow:hidden; border-radius:18px; background:#000; aspect-ratio:9/16; max-height:520px; border:2px solid rgba(255,95,162,0.35); }
+  .cslide img, .cslide video { width:100%; height:100%; object-fit:cover; display:block; }
+  .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:none; color:#fff; font-size:22px; padding:8px 14px; border-radius:50%; cursor:pointer; z-index:10; }
+  .cdot { width:9px; height:9px; border-radius:50%; cursor:pointer; display:inline-block; }
+
+  .section-label { display:block; text-align:center; font-size:13px; font-weight:800; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:8px; }
+  .section-title { font-family:'Baloo 2',sans-serif; font-size:30px; font-weight:800; text-align:center; margin-bottom:30px; line-height:1.2; }
+
+  .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:8px; }
+  .cat-item { background:rgba(255,95,162,0.08); border:1px solid rgba(255,95,162,0.18); border-radius:14px; padding:16px 8px; text-align:center; }
+  .cat-emoji { font-size:26px; margin-bottom:6px; }
+  .cat-label { font-size:12px; font-weight:700; color:var(--text); }
+
+  .faq-list { display:flex; flex-direction:column; gap:10px; }
+  .faq-item { background:rgba(255,95,162,0.06); border:1px solid rgba(255,95,162,0.16); border-radius:14px; overflow:hidden; }
+  .faq-q { padding:18px 20px; font-weight:700; font-size:15px; display:flex; justify-content:space-between; align-items:center; cursor:pointer; }
+  .faq-arrow { transition:transform .25s ease; color:var(--gold); }
+  .faq-item.open .faq-arrow { transform:rotate(180deg); }
+  .faq-a { max-height:0; overflow:hidden; transition:all .3s ease; padding:0 20px; font-size:13.5px; color:var(--muted); line-height:1.5; }
+  .faq-item.open .faq-a { max-height:200px; padding:0 20px 18px; }
+
+  #cta-final { text-align:center; padding-bottom:60px; }
+  .cta-box { background:linear-gradient(160deg,rgba(255,95,162,0.14),rgba(255,201,77,0.08)); border:1px solid rgba(255,95,162,0.3); border-radius:24px; padding:36px 24px; }
+
+  footer { text-align:center; padding:32px 20px 44px; position:relative; z-index:1; }
+  .footer-logo { width:80px; border-radius:50%; margin-bottom:12px; }
+  .footer-name { font-weight:800; margin-bottom:6px; }
+  .footer-disclaimer { font-size:11px; color:var(--muted); max-width:380px; margin:10px auto 0; line-height:1.5; }
+
+  @media (min-width:540px) {
+    .hero-title { font-size:46px; }
+    .section-title { font-size:36px; }
+  }
+</style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S9JF7ZYMPR"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-S9JF7ZYMPR');
+</script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '363578908933541');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="logo-img-wrap">
+    <img class="logo-img" src="assets/logo.jpg" alt="Clica Aqui Amiga">
+  </div>
+
+  <div class="hero-badge">✨ Grupo gratuito no WhatsApp</div>
+
+  <h1 class="hero-title">Clica Aqui <span class="accent">Amiga</span> 💖</h1>
+  <p class="hero-sub">Cupons, ofertas e achadinhos com até <strong>70% OFF</strong> direto no seu WhatsApp. Moda, beleza, casa e muito mais ✨</p>
+
+  <div class="clique-badge">👇 CLIQUE AQUI 👇</div>
+
+  <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
+    <div class="btn-inner">
+      <img src="assets/logo.jpg" class="grupo-icon" alt="Clica Aqui Amiga">
+      <div class="btn-label">
+        <span class="btn-sub">Entrar no WhatsApp</span>
+        <span class="btn-main">Clica Aqui Amiga</span>
+      </div>
+    </div>
+    <div class="btn-arrow">›</div>
+  </a>
+
+  <div class="small-note">🔒 100% grátis · Saia quando quiser</div>
+
+  <!-- CARROSSEL -->
+  <div id="carousel-wrap">
+    <div id="carousel">
+      <div class="cslide" style="display:block;">
+        <img src="assets/1.png">
+      </div>
+      <div class="cslide" style="display:none;">
+        <img src="assets/2.png">
+      </div>
+      <div class="cslide" style="display:none;">
+        <video src="assets/video1.mp4" controls playsinline muted loop></video>
+      </div>
+
+      <button onclick="moveSlide(-1)" class="carousel-arrow" style="left:8px;">‹</button>
+      <button onclick="moveSlide(1)" class="carousel-arrow" style="right:8px;">›</button>
+
+      <div style="position:absolute;bottom:12px;width:100%;display:flex;justify-content:center;gap:7px;">
+        <span class="cdot active" onclick="goSlide(0)" style="background:var(--gold);opacity:1;"></span>
+        <span class="cdot" onclick="goSlide(1)" style="background:#fff;opacity:0.5;"></span>
+        <span class="cdot" onclick="goSlide(2)" style="background:#fff;opacity:0.5;"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section id="categorias">
+  <span class="section-label">O que você vai receber</span>
+  <div class="section-title">De tudo um pouco 💸</div>
+  <div class="cat-grid">
+    <div class="cat-item"><div class="cat-emoji">👗</div><div class="cat-label">Moda</div></div>
+    <div class="cat-item"><div class="cat-emoji">💄</div><div class="cat-label">Beleza</div></div>
+    <div class="cat-item"><div class="cat-emoji">🏠</div><div class="cat-label">Casa</div></div>
+    <div class="cat-item"><div class="cat-emoji">📱</div><div class="cat-label">Eletrônicos</div></div>
+    <div class="cat-item"><div class="cat-emoji">👶</div><div class="cat-label">Bebê</div></div>
+    <div class="cat-item"><div class="cat-emoji">✨</div><div class="cat-label">E muito mais</div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <span class="section-label">Dúvidas</span>
+  <div class="section-title">Perguntas frequentes</div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">O que vou receber? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Cupons e promoções reais de moda, beleza, casa e mais — direto no grupo, sem enrolação.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">É uma loja? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Não! A gente garimpa as melhores ofertas pra você. Ganhamos comissão das lojas quando você compra, sem custo nenhum pra você.</div>
+    </div>
+    <div class="faq-item open">
+      <div class="faq-q">Posso sair quando quiser? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">Sim! Sem compromisso nenhum. É só sair do grupo a qualquer momento.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">É realmente grátis? <span class="faq-arrow">⌄</span></div>
+      <div class="faq-a">100% gratuito. Sem mensalidade, sem taxa, sem pegadinha.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta-final">
+  <div class="cta-box">
+    <span class="section-label">Bora economizar?</span>
+    <div class="section-title">Entra na nossa turma 💖</div>
+    <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp" style="margin:0 auto;">
+      <div class="btn-inner">
+        <img src="assets/logo.jpg" class="grupo-icon" alt="Clica Aqui Amiga">
+        <div class="btn-label">
+          <span class="btn-sub">Entrar no WhatsApp</span>
+          <span class="btn-main">Clica Aqui Amiga</span>
+        </div>
+      </div>
+      <div class="btn-arrow">›</div>
+    </a>
+  </div>
+</section>
+
+<footer>
+  <img class="footer-logo" src="assets/logo.jpg" alt="Clica Aqui Amiga">
+  <div class="footer-name">Clica Aqui Amiga</div>
+  <div class="footer-disclaimer">Este site pode conter links de afiliados. Ao comprar através deles, podemos receber uma comissão, sem custo adicional para você.</div>
+</footer>
+
+<script>
+  // FAQ
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Carousel
+  var cIdx = 0;
+  var cSlides = document.querySelectorAll('.cslide');
+  var cDots = document.querySelectorAll('.cdot');
+  function goSlide(n) {
+    var prevVideo = cSlides[cIdx].querySelector('video');
+    if (prevVideo) { prevVideo.pause(); prevVideo.currentTime = 0; }
+    cSlides[cIdx].style.display = 'none';
+    cDots[cIdx].style.opacity = '0.5';
+    cDots[cIdx].style.background = '#fff';
+    cIdx = (n + cSlides.length) % cSlides.length;
+    cSlides[cIdx].style.display = 'block';
+    cDots[cIdx].style.opacity = '1';
+    cDots[cIdx].style.background = 'var(--gold)';
+    var nextVideo = cSlides[cIdx].querySelector('video');
+    if (nextVideo) { nextVideo.play().catch(function(){}); }
+  }
+  function moveSlide(dir) { goSlide(cIdx + dir); }
+  setInterval(function(){ moveSlide(1); }, 4000);
+
+  // Clique no botão -> Meta Lead event
+  document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(btn => {
+    btn.addEventListener('click', function() {
+      var nome = (this.querySelector('.btn-main') || this).textContent.trim();
+      if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { group_name: nome });
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: nome });
+    });
+  });
+</script>
+</body>
+</html>
