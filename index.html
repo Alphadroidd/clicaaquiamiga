@@ -89,10 +89,12 @@
   .small-note { font-size:12px; color:var(--muted); margin-top:14px; display:flex; align-items:center; gap:6px; }
 
   #carousel-wrap { margin:8px auto 0; width:100%; max-width:420px; }
-  #carousel { position:relative; overflow:hidden; border-radius:18px; background:#000; aspect-ratio:9/16; max-height:520px; border:2px solid rgba(255,95,162,0.35); }
-  .cslide img, .cslide video { width:100%; height:100%; object-fit:cover; display:block; }
+  #carousel { position:relative; overflow:hidden; border-radius:18px; background:#000; width:100%; }
+  .cslide img, .cslide video { width:100%; height:auto; display:block; }
   .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:none; color:#fff; font-size:22px; padding:8px 14px; border-radius:50%; cursor:pointer; z-index:10; }
   .cdot { width:9px; height:9px; border-radius:50%; cursor:pointer; display:inline-block; }
+  #carousel-dots { display:flex; justify-content:center; gap:7px; margin-top:10px; }
+  #muteBtn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.35); border:2px solid rgba(255,255,255,0.5); border-radius:50%; width:56px; height:56px; font-size:22px; cursor:pointer; z-index:20; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); }
 
   .section-label { display:block; text-align:center; font-size:13px; font-weight:800; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:8px; }
   .section-title { font-family:'Baloo 2',sans-serif; font-size:30px; font-weight:800; text-align:center; margin-bottom:30px; line-height:1.2; }
@@ -187,18 +189,18 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
       <div class="cslide" style="display:none;">
         <img src="assets/imagem2.PNG">
       </div>
-      <div class="cslide" style="display:none;">
-        <video src="assets/video1.MP4" controls playsinline muted loop></video>
+      <div class="cslide" style="display:none;position:relative;">
+        <video id="cVideo" src="assets/video1.MP4" playsinline muted disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+        <button id="muteBtn" onclick="toggleMute()">🔇</button>
       </div>
 
       <button onclick="moveSlide(-1)" class="carousel-arrow" style="left:8px;">‹</button>
       <button onclick="moveSlide(1)" class="carousel-arrow" style="right:8px;">›</button>
-
-      <div style="position:absolute;bottom:12px;width:100%;display:flex;justify-content:center;gap:7px;">
-        <span class="cdot active" onclick="goSlide(0)" style="background:var(--gold);opacity:1;"></span>
-        <span class="cdot" onclick="goSlide(1)" style="background:#fff;opacity:0.5;"></span>
-        <span class="cdot" onclick="goSlide(2)" style="background:#fff;opacity:0.5;"></span>
-      </div>
+    </div>
+    <div id="carousel-dots">
+      <span class="cdot active" onclick="goSlide(0)" style="background:var(--gold);opacity:1;"></span>
+      <span class="cdot" onclick="goSlide(1)" style="background:#fff;opacity:0.5;"></span>
+      <span class="cdot" onclick="goSlide(2)" style="background:#fff;opacity:0.5;"></span>
     </div>
   </div>
 </section>
@@ -279,9 +281,19 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
   var cIdx = 0;
   var cSlides = document.querySelectorAll('.cslide');
   var cDots = document.querySelectorAll('.cdot');
+  var cTimer = null;
+  var cVideo = document.getElementById('cVideo');
+  var muteBtn = document.getElementById('muteBtn');
+
+  function scheduleNext(delay) {
+    clearTimeout(cTimer);
+    cTimer = setTimeout(function(){ moveSlide(1); }, delay);
+  }
+
   function goSlide(n) {
-    var prevVideo = cSlides[cIdx].querySelector('video');
-    if (prevVideo) { prevVideo.pause(); prevVideo.currentTime = 0; }
+    clearTimeout(cTimer);
+    if (cIdx === 2 && cVideo) { cVideo.pause(); cVideo.currentTime = 0; }
+
     cSlides[cIdx].style.display = 'none';
     cDots[cIdx].style.opacity = '0.5';
     cDots[cIdx].style.background = '#fff';
@@ -289,11 +301,23 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
     cSlides[cIdx].style.display = 'block';
     cDots[cIdx].style.opacity = '1';
     cDots[cIdx].style.background = 'var(--gold)';
-    var nextVideo = cSlides[cIdx].querySelector('video');
-    if (nextVideo) { nextVideo.play().catch(function(){}); }
+
+    if (cIdx === 2 && cVideo) {
+      cVideo.currentTime = 0;
+      cVideo.play().catch(function(){});
+      cVideo.onended = function() { moveSlide(1); };
+      scheduleNext(12000);
+    } else {
+      scheduleNext(4000);
+    }
   }
   function moveSlide(dir) { goSlide(cIdx + dir); }
-  setInterval(function(){ moveSlide(1); }, 4000);
+  function toggleMute() {
+    if (!cVideo) return;
+    cVideo.muted = !cVideo.muted;
+    muteBtn.textContent = cVideo.muted ? '🔇' : '🔊';
+  }
+  scheduleNext(4000);
 
   // Clique no botão -> Meta Lead event
   document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(btn => {
