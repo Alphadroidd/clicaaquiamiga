@@ -15,7 +15,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="GRUPO VIP CLICA AQUI AMIGA 💖">
-<meta name="twitter:description" content="Cupons, ofertas e achadinhos com até 70% OFF direto no seu WhatsApp!">
+<meta name="twitter:description" content="Cupons e achadinhos com até 70% OFF direto no seu WhatsApp!">
 <meta name="twitter:image" content="https://clicaaquiamiga.pages.dev/og.jpg">
 <meta name="description" content="Cupons e achadinhos com até 70% OFF direto no seu WhatsApp! Entre grátis no grupo Clica Aqui Amiga.">
 
@@ -65,10 +65,60 @@
   .hero-title { font-family:'Baloo 2',sans-serif; font-weight:800; font-size:38px; line-height:1.12; margin-bottom:14px; }
   .hero-title .accent { background:linear-gradient(90deg,var(--pink),var(--gold)); -webkit-background-clip:text; background-clip:text; color:transparent; }
 
-  .hero-sub { font-size:16px; color:var(--muted); max-width:360px; margin:0 auto 28px; line-height:1.5; }
+  .hero-sub { font-size:16px; color:var(--muted); max-width:360px; margin:0 auto 16px; line-height:1.5; }
 
-  .clique-badge { display:inline-block; background:linear-gradient(90deg,var(--gold),var(--gold-deep)); color:#3a1408; font-family:'Baloo 2',sans-serif; font-size:24px; letter-spacing:2px; padding:8px 26px; border-radius:50px; box-shadow:0 0 22px rgba(255,201,77,0.6); margin-bottom:26px; animation:pulseBadge 1.5s infinite alternate; }
-  @keyframes pulseBadge { from{transform:scale(1)} to{transform:scale(1.05)} }
+  /* PROVA SOCIAL - NOVO */
+  .social-proof {
+    display:inline-flex; align-items:center; gap:10px;
+    background:rgba(255,201,77,0.10); border:1px solid rgba(255,201,77,0.30);
+    border-radius:30px; padding:8px 18px; margin-bottom:24px;
+  }
+  .social-proof-avatars { display:flex; }
+  .social-proof-avatars span {
+    width:26px; height:26px; border-radius:50%; border:2px solid var(--bg);
+    background:linear-gradient(135deg,var(--pink),var(--pink-deep));
+    display:flex; align-items:center; justify-content:center; font-size:11px;
+    margin-left:-8px; flex-shrink:0;
+  }
+  .social-proof-avatars span:first-child { margin-left:0; }
+  .social-proof-text { font-size:12px; font-weight:700; color:var(--gold); line-height:1.3; }
+  .social-proof-text em { font-style:normal; color:var(--text); }
+
+  /* CARROSSEL - agora ACIMA do botão */
+  #carousel-wrap { margin:0 auto 24px; width:100%; max-width:420px; }
+  #carousel { position:relative; overflow:hidden; border-radius:18px; background:#000; width:100%; }
+  .cslide img, .cslide video { width:100%; height:auto; display:block; }
+  .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:none; color:#fff; font-size:22px; padding:8px 14px; border-radius:50%; cursor:pointer; z-index:10; }
+  .cdot { width:9px; height:9px; border-radius:50%; cursor:pointer; display:inline-block; }
+  #carousel-dots { display:flex; justify-content:center; gap:7px; margin-top:10px; }
+  /* COUNTDOWN BAR */
+  #countdown-bar {
+    position:fixed; top:0; left:0; right:0; z-index:10000;
+    background:linear-gradient(90deg,var(--pink-deep),var(--pink-mid));
+    padding:9px 16px;
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    font-size:13px; font-weight:800; color:#fff;
+    letter-spacing:0.3px;
+    box-shadow:0 2px 12px rgba(184,36,106,0.4);
+  }
+  #countdown-bar .cd-label { opacity:0.9; font-weight:700; }
+  #countdown-bar .cd-time {
+    font-family:'Baloo 2',sans-serif; font-size:16px; font-weight:800;
+    background:rgba(0,0,0,0.25); border-radius:8px; padding:2px 10px;
+    letter-spacing:1px; min-width:58px; text-align:center;
+  }
+  #countdown-bar .cd-time.urgent { color:var(--gold); animation:urgentPulse 0.6s ease-in-out infinite alternate; }
+  @keyframes urgentPulse { from{opacity:1} to{opacity:0.6} }
+  body { padding-top:40px; }
+
+  /* SETA ANIMADA apontando para o botão - NOVO */
+  .arrow-pointer {
+    display:flex; flex-direction:column; align-items:center; gap:2px; margin-bottom:10px;
+    animation:bounceDown 1.2s ease-in-out infinite;
+  }
+  @keyframes bounceDown { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+  .arrow-pointer span { font-size:13px; font-weight:800; color:var(--gold); letter-spacing:1px; text-transform:uppercase; }
+  .arrow-pointer svg { width:22px; height:22px; fill:var(--gold); }
 
   .cta-stack { display:flex; flex-direction:column; width:100%; }
 
@@ -78,8 +128,9 @@
     background:linear-gradient(135deg,var(--green),#1fb855);
     border-radius:18px; padding:16px 20px; text-decoration:none; color:#fff;
     box-shadow:0 8px 28px rgba(37,211,102,0.35);
-    transition:transform .15s ease;
+    transition:transform .15s ease, box-shadow .15s ease;
   }
+  .btn-whatsapp:hover { box-shadow:0 12px 36px rgba(37,211,102,0.50); }
   .btn-whatsapp:active { transform:scale(0.97); }
   .btn-inner { display:flex; align-items:center; justify-content:center; gap:14px; min-width:0; flex:1; }
   .grupo-icon { width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:center 15%; border:2px solid rgba(255,255,255,0.7); flex-shrink:0; }
@@ -89,14 +140,6 @@
   .btn-arrow { font-size:24px; opacity:.9; flex-shrink:0; }
 
   .small-note { font-size:12px; color:var(--muted); margin-top:14px; display:flex; align-items:center; gap:6px; }
-
-  #carousel-wrap { margin:8px auto 0; width:100%; max-width:420px; }
-  #carousel { position:relative; overflow:hidden; border-radius:18px; background:#000; width:100%; }
-  .cslide img, .cslide video { width:100%; height:auto; display:block; }
-  .carousel-arrow { position:absolute; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.55); border:none; color:#fff; font-size:22px; padding:8px 14px; border-radius:50%; cursor:pointer; z-index:10; }
-  .cdot { width:9px; height:9px; border-radius:50%; cursor:pointer; display:inline-block; }
-  #carousel-dots { display:flex; justify-content:center; gap:7px; margin-top:10px; }
-  #muteBtn { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); background:rgba(0,0,0,0.35); border:2px solid rgba(255,255,255,0.5); border-radius:50%; width:56px; height:56px; font-size:22px; cursor:pointer; z-index:20; display:flex; align-items:center; justify-content:center; backdrop-filter:blur(4px); }
 
   .section-label { display:block; text-align:center; font-size:13px; font-weight:800; letter-spacing:2px; color:var(--gold); text-transform:uppercase; margin-bottom:8px; }
   .section-title { font-family:'Baloo 2',sans-serif; font-size:30px; font-weight:800; text-align:center; margin-bottom:30px; line-height:1.2; }
@@ -125,6 +168,10 @@
   @media (min-width:540px) {
     .hero-title { font-size:46px; }
     .section-title { font-size:36px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-img-wrap, .arrow-pointer { animation:none; }
   }
 </style>
 
@@ -156,6 +203,12 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
 </head>
 <body>
 
+<!-- BARRA DE COUNTDOWN -->
+<div id="countdown-bar">
+  <span class="cd-label">⏰ Vagas limitadas! Grupo fecha em</span>
+  <span class="cd-time" id="cd-display">15:00</span>
+</div>
+
 <!-- HERO -->
 <section id="hero">
   <div class="logo-img-wrap">
@@ -167,10 +220,50 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
   <h1 class="hero-title">Clica Aqui <span class="accent">Amiga</span> 💖</h1>
   <p class="hero-sub">Cupons, ofertas e achadinhos com até <strong>70% OFF</strong> direto no seu WhatsApp. Moda, beleza, casa e muito mais ✨</p>
 
-  <div class="clique-badge">👇 CLIQUE AQUI 👇</div>
+  <!-- PROVA SOCIAL - NOVO -->
+  <div class="social-proof">
+    <div class="social-proof-avatars">
+      <span>👩</span>
+      <span>👩</span>
+      <span>👩</span>
+      <span>👩</span>
+    </div>
+    <div class="social-proof-text">
+      <em>+1.200 amigas</em> já economizando<br>todo dia no grupo 💸
+    </div>
+  </div>
+
+  <!-- CARROSSEL - movido para ANTES do botão -->
+  <div id="carousel-wrap">
+    <div id="carousel">
+      <div class="cslide" style="display:block;">
+        <img src="assets/imagem1.PNG" alt="Oferta no grupo">
+      </div>
+      <div class="cslide" style="display:none;">
+        <img src="assets/imagem2.PNG" alt="Oferta no grupo">
+      </div>
+      <div class="cslide" style="display:none;position:relative;">
+        <video id="cVideo" src="assets/video1.MP4" playsinline muted disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
+      </div>
+
+      <button onclick="moveSlide(-1)" class="carousel-arrow" style="left:8px;" aria-label="Slide anterior">‹</button>
+      <button onclick="moveSlide(1)" class="carousel-arrow" style="right:8px;" aria-label="Próximo slide">›</button>
+    </div>
+    <div id="carousel-dots">
+      <span class="cdot active" onclick="goSlide(0)" style="background:var(--gold);opacity:1;"></span>
+      <span class="cdot" onclick="goSlide(1)" style="background:#fff;opacity:0.5;"></span>
+      <span class="cdot" onclick="goSlide(2)" style="background:#fff;opacity:0.5;"></span>
+    </div>
+  </div>
+
+  <!-- SETA APONTANDO PARA O BOTÃO - NOVO -->
+  <div class="arrow-pointer">
+    <span>Entre grátis agora</span>
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4v12M6 11l6 6 6-6" stroke="#ffc94d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  </div>
 
   <div class="cta-stack">
-    <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
+    <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp" id="cta-hero">
       <div class="btn-inner">
         <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
         <div class="btn-label">
@@ -183,30 +276,6 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
   </div>
 
   <div class="small-note">🔒 100% grátis · Saia quando quiser</div>
-
-  <!-- CARROSSEL -->
-  <div id="carousel-wrap">
-    <div id="carousel">
-      <div class="cslide" style="display:block;">
-        <img src="assets/imagem1.PNG">
-      </div>
-      <div class="cslide" style="display:none;">
-        <img src="assets/imagem2.PNG">
-      </div>
-      <div class="cslide" style="display:none;position:relative;">
-        <video id="cVideo" src="assets/video1.MP4" playsinline muted disablepictureinpicture controlslist="nodownload nofullscreen noremoteplayback"></video>
-        <button id="muteBtn" onclick="toggleMute()">🔇</button>
-      </div>
-
-      <button onclick="moveSlide(-1)" class="carousel-arrow" style="left:8px;">‹</button>
-      <button onclick="moveSlide(1)" class="carousel-arrow" style="right:8px;">›</button>
-    </div>
-    <div id="carousel-dots">
-      <span class="cdot active" onclick="goSlide(0)" style="background:var(--gold);opacity:1;"></span>
-      <span class="cdot" onclick="goSlide(1)" style="background:#fff;opacity:0.5;"></span>
-      <span class="cdot" onclick="goSlide(2)" style="background:#fff;opacity:0.5;"></span>
-    </div>
-  </div>
 </section>
 
 <!-- CATEGORIAS -->
@@ -253,7 +322,7 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
     <span class="section-label">Bora economizar?</span>
     <div class="section-title">Entra na nossa turma 💖</div>
     <div class="cta-stack">
-      <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp">
+      <a href="https://chat.whatsapp.com/IXMhWLeYe3YBR6lJw9fwsV?s=cl&p=i&mlu=2" class="btn-whatsapp" id="cta-final-btn">
         <div class="btn-inner">
           <img src="logo.jpeg" class="grupo-icon" alt="Clica Aqui Amiga">
           <div class="btn-label">
@@ -274,11 +343,44 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
 </footer>
 
 <script>
+  // Countdown 15 minutos
+  (function() {
+    var KEY = 'caa_cd_end';
+    var stored = sessionStorage.getItem(KEY);
+    var endTime;
+    if (stored) {
+      endTime = parseInt(stored, 10);
+    } else {
+      endTime = Date.now() + 15 * 60 * 1000;
+      sessionStorage.setItem(KEY, endTime);
+    }
+    var display = document.getElementById('cd-display');
+    function tick() {
+      var remaining = endTime - Date.now();
+      if (remaining <= 0) {
+        // Reinicia ao zerar (cria senso de urgência contínuo)
+        endTime = Date.now() + 15 * 60 * 1000;
+        sessionStorage.setItem(KEY, endTime);
+        remaining = 15 * 60 * 1000;
+      }
+      var mins = Math.floor(remaining / 60000);
+      var secs = Math.floor((remaining % 60000) / 1000);
+      display.textContent = (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+      if (mins < 3) {
+        display.classList.add('urgent');
+      } else {
+        display.classList.remove('urgent');
+      }
+    }
+    tick();
+    setInterval(tick, 1000);
+  })();
+
   // FAQ
   document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
-      const open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    item.querySelector('.faq-q').addEventListener('click', function() {
+      var open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
       if (!open) item.classList.add('open');
     });
   });
@@ -289,7 +391,6 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
   var cDots = document.querySelectorAll('.cdot');
   var cTimer = null;
   var cVideo = document.getElementById('cVideo');
-  var muteBtn = document.getElementById('muteBtn');
 
   function scheduleNext(delay) {
     clearTimeout(cTimer);
@@ -312,25 +413,20 @@ src="https://www.facebook.com/tr?id=363578908933541&ev=PageView&noscript=1"
       cVideo.currentTime = 0;
       cVideo.play().catch(function(){});
       cVideo.onended = function() { moveSlide(1); };
-      scheduleNext(12000);
+      scheduleNext(14000);
     } else {
-      scheduleNext(4000);
+      scheduleNext(7000); // aumentado de 4s para 7s
     }
   }
   function moveSlide(dir) { goSlide(cIdx + dir); }
-  function toggleMute() {
-    if (!cVideo) return;
-    cVideo.muted = !cVideo.muted;
-    muteBtn.textContent = cVideo.muted ? '🔇' : '🔊';
-  }
-  scheduleNext(4000);
+  scheduleNext(7000);
 
-  // Clique no botão -> Meta Lead event
-  document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(btn => {
+  // Rastreamento de clique nos botões de WhatsApp
+  document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(function(btn) {
     btn.addEventListener('click', function() {
-      var nome = (this.querySelector('.btn-main') || this).textContent.trim();
-      if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { group_name: nome });
-      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: nome });
+      var location = this.id === 'cta-hero' ? 'hero' : 'cta_final';
+      if (typeof gtag === 'function') gtag('event', 'whatsapp_click', { group_name: 'Clica Aqui Amiga', click_location: location });
+      if (typeof fbq === 'function') fbq('track', 'Lead', { content_name: 'Clica Aqui Amiga', content_category: location });
     });
   });
 </script>
